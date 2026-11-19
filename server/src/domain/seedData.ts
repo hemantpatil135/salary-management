@@ -140,7 +140,8 @@ export function generateEmployees(count: number, seed = 42): EmployeeInput[] {
     const first = rng.pick(FIRST_NAMES);
     const last = rng.pick(LAST_NAMES);
 
-    const hiredYear = rng.int(2012, 2026);
+    // Hire dates fall between 2012 and 2025 so none are in the future.
+    const hiredYear = rng.int(2012, 2025);
     const hiredOn = `${hiredYear}-${String(rng.int(1, 12)).padStart(2, '0')}-${String(rng.int(1, 28)).padStart(2, '0')}`;
     const tenureBump = 1 + Math.min(2026 - hiredYear, 10) * 0.01;
     const noise = 0.85 + rng.next() * 0.3;
