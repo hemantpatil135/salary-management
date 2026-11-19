@@ -2,6 +2,8 @@
 
 A web app that lets ACME's HR Manager manage salary records for **10,000 employees across 7 countries** and answer "how do we pay people?" without spreadsheets.
 
+**Live demo:** https://salary-management-coral.vercel.app
+
 **Stack:** React 19 + TypeScript + Material UI + React Query · Node 22 + Express 5 + TypeScript · SQLite (better-sqlite3) · zod · Vitest + Testing Library + Supertest
 
 ## Features
