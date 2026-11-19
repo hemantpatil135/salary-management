@@ -1,0 +1,11 @@
+# One-click deploy on Render (Blueprint). Free tier storage is ephemeral; the app
+# re-seeds the 10,000 demo employees automatically whenever the database is empty.
+services:
+  - type: web
+    name: acme-salary-management
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: DATABASE_FILE
+        value: /tmp/salary.db
