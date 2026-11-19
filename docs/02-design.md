@@ -40,6 +40,11 @@ Dependencies point inwards and the DB handle is injected (`createApp(db)`), so e
 - List queries use `LIMIT/OFFSET` with page size capped at 100; at 10k rows OFFSET cost is negligible. Keyset pagination is the upgrade path past ~1M rows.
 - Search uses `LIKE` prefix/contains on indexed columns; FTS5 is the upgrade path if search becomes a bottleneck.
 
+## Deployment
+- **Vercel (demo):** static React build + the same Express app wrapped as one serverless function. SQLite lives in `/tmp` and is re-seeded deterministically on cold start, a deliberate trade-off for a free, zero-ops demo.
+- **Docker / Render:** one long-running process with a persistent SQLite file, closer to how a single HR team would run it.
+- Because SQL is isolated in the repository layer, moving to a hosted database for durable multi-instance writes is a contained change.
+
 ## Upgrade path (v2)
 Auth (SSO, viewer/editor roles) → salary change history table → CSV import/export → FX conversion with dated rates → Postgres.
 

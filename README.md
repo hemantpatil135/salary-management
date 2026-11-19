@@ -24,7 +24,10 @@ The server also seeds automatically on first boot if the database is empty.
 npm run build && npm start   # http://localhost:4000
 ```
 
-**Docker / Render:** `docker build -t salary . && docker run -p 4000:4000 salary`, or deploy `render.yaml` as a Render Blueprint.
+**Deploy on Vercel:** import the repo in Vercel; `vercel.json` sets everything up. The React app is served as static files and the Express API runs as one serverless function (`api/index.mjs`).
+> Note: Vercel functions only have a temporary `/tmp` disk, so the demo database is re-seeded with the same 10,000 employees on each cold start. Edits persist while an instance stays warm. For real use, point the repository layer at a hosted database (e.g. Postgres or Turso).
+
+**Docker / Render (persistent single server):** `docker build -t salary . && docker run -p 4000:4000 salary`, or deploy `render.yaml` as a Render Blueprint.
 
 ## Tests
 ```bash
