@@ -64,3 +64,7 @@ client/src/
 - [Requirements (one page)](docs/01-requirements.md): scope and what's deliberately left out
 - [Design notes](docs/02-design.md): architecture diagram, trade-offs, performance numbers
 - [AI workflow](docs/03-ai-workflow.md): how AI tools were used, key prompts, where I overrode them
+
+## Screenshots
+![Employee directory](docs/screenshots/employees.png)
+![Salary insights](docs/screenshots/insights.png)
